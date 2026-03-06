@@ -1,0 +1,35 @@
+<?xml version='1.0' standalone='yes'?>
+<!DOCTYPE PLUGIN [
+<!ENTITY name      "unraid-geminicli">
+<!ENTITY author    "John White">
+<!ENTITY version   "2026.03.06.99">
+<!ENTITY pluginURL "https://github.com/johnpwhite/unraid-plg-geminicli/raw/main/unraid-geminicli.plg">
+]>
+<PLUGIN name="&name;" author="&author;" version="&version;" pluginURL="&pluginURL;" icon="aicli-cli.png">
+
+<CHANGES>
+## 2026.03.06.99
+- **Plugin Migration**: Gemini CLI has evolved into AI CLI Agents!
+- Installing this update will automatically migrate you to the new 'unraid-aicliagents' plugin and repository.
+</CHANGES>
+
+<FILE Run="/bin/bash">
+<INLINE>
+#!/bin/bash
+echo "--- PLUGIN MIGRATION: Gemini CLI -> AI CLI Agents ---"
+echo "Gemini CLI is being replaced by AI CLI Agents."
+
+PLG_NEW="https://github.com/johnpwhite/unraid-plg-aicliagents/raw/main/unraid-aicliagents.plg"
+
+echo "Downloading and installing AI CLI Agents..."
+# Install the new plugin
+/usr/local/sbin/plugin install "$PLG_NEW"
+
+# Once installed, remove ourselves
+echo "Removing legacy Gemini CLI plugin..."
+/usr/local/sbin/plugin remove unraid-geminicli.plg
+
+echo "Migration complete! Please navigate to the AI CLI Agents page in your Unraid WebUI."
+</INLINE>
+</FILE>
+</PLUGIN>
