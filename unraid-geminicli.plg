@@ -5,7 +5,7 @@
 <!ENTITY version   "2026.03.06.99">
 <!ENTITY pluginURL "https://github.com/johnpwhite/unraid-plg-geminicli/raw/main/unraid-geminicli.plg">
 ]>
-<PLUGIN name="&name;" author="&author;" version="&version;" pluginURL="&pluginURL;" icon="aicli-cli.png">
+<PLUGIN name="unraid-geminicli" author="John White" version="2026.03.06.99" pluginURL="https://github.com/johnpwhite/unraid-plg-geminicli/raw/main/unraid-geminicli.plg" icon="aicli-cli.png">
 
 <CHANGES>
 ## 2026.03.06.99
