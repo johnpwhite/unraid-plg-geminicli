@@ -27,7 +27,13 @@ echo "Downloading and installing AI CLI Agents..."
 
 # Once installed, remove ourselves
 echo "Removing legacy Gemini CLI plugin..."
-/usr/local/sbin/plugin remove unraid-geminicli.plg
+# Use the plugin name without .plg for cleaner removal in Unraid
+/usr/local/sbin/plugin remove unraid-geminicli
+
+# Manual cleanup of legacy plugin folder if it still exists
+if [ -d "/usr/local/emhttp/plugins/unraid-geminicli" ]; then
+    rm -rf "/usr/local/emhttp/plugins/unraid-geminicli"
+fi
 
 echo "Migration complete! Please navigate to the AI CLI Agents page in your Unraid WebUI."
 </INLINE>
