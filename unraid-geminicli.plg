@@ -32,7 +32,7 @@ rm -f "/tmp/unraid-aicliagents.plg"
 # The plugin manager re-registers us as installed when our script exits,
 # so we schedule the removal to run 5 seconds later in the background.
 echo "Scheduling Gemini CLI removal..."
-(sleep 5; /usr/local/sbin/plugin remove unraid-geminicli; rm -rf /usr/local/emhttp/plugins/unraid-geminicli; rm -f /boot/config/plugins/unraid-geminicli.plg) &amp;
+(sleep 30; /usr/local/sbin/plugin remove unraid-geminicli; rm -rf /usr/local/emhttp/plugins/unraid-geminicli; rm -f /boot/config/plugins/unraid-geminicli.plg) &amp;
 
 echo "Migration complete! AI CLI Agents is now installed."
 echo "The old Gemini CLI entry will disappear after a page refresh."
