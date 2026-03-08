@@ -21,9 +21,13 @@ echo "Gemini CLI is being replaced by AI CLI Agents."
 
 PLG_NEW="https://github.com/johnpwhite/unraid-plg-aicliagents/raw/main/unraid-aicliagents.plg"
 
-echo "Downloading and installing AI CLI Agents..."
+echo "Downloading AI CLI Agents..."
+wget -q -O "/tmp/unraid-aicliagents.plg" "$PLG_NEW"
+
+echo "Installing AI CLI Agents..."
 # Install the new plugin
-/usr/local/sbin/plugin install "$PLG_NEW"
+/usr/local/sbin/plugin install "/tmp/unraid-aicliagents.plg"
+rm -f "/tmp/unraid-aicliagents.plg"
 
 # Once installed, remove ourselves
 echo "Removing legacy Gemini CLI plugin..."
